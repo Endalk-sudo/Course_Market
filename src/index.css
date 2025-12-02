@@ -1,0 +1,42 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+
+  /* --- Brand Colors --- */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-500: #3b82f6; /* Main Brand Blue */
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-900: #1e3a8a;
+
+  --color-accent-500: #10b981; /* Success/Energetic Green */
+  --color-accent-600: #059669;
+
+  /* --- Neutral Colors --- */
+  --color-background: #ffffff;
+  --color-surface: #f8fafc; /* For cards, modals */
+  --color-border: #e2e8f0;
+
+  /* --- Text Colors --- */
+  --color-text-primary: #1e293b; /* Dark Slate, not pure black */
+  --color-text-secondary: #64748b; /* Muted text */
+  --color-text-inverse: #ffffff; /* Text on colored backgrounds */
+
+  /* --- Semantic Colors --- */
+  --color-success: var(--color-accent-500);
+  --color-success-bg: #d1fae5;
+  --color-warning: #f59e0b;
+  --color-warning-bg: #fef3c7;
+  --color-error: #ef4444;
+  --color-error-bg: #fee2e2;
+  --color-info: var(--color-primary-500);
+  --color-info-bg: var(--color-primary-50);
+}
+
