@@ -1,0 +1,68 @@
+.courses-carousel-container{
+    max-width: 1400px;
+    margin-top: 2.2rem;
+    margin-left: auto;
+    margin-right: auto;
+    position : relative;
+    /* overflow: hidden; */
+}
+
+.courses-carousel-container .courses-carousel{
+    display: flex;
+    width: 100%;
+    position : relative;
+}
+
+.courses-carousel-container .carousel-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+.carousel-btn:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.courses-carousel-container .left-carousel-btn{
+    left: 30px;
+}
+
+.courses-carousel-container .right-carouselbtn{
+    right: 30px;
+}
+
+.dot-btn-container{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -40px;
+    display: flex;
+    gap: 20px;
+}
+
+.dot-btn-container .dot-btn{
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: rgba(84, 87, 240, 0.568);
+    z-index: 10;
+}
+
+.dot-btn.dot-active{
+    background: rgba(72, 6, 252, 0.87);
+    transform: scale(1.4);
+}
+   

@@ -1,10 +1,6 @@
-import React from 'react'
-import "./HomePage.css"
-import CoursesCarousel from '../Features/CoursesCarousel'
-import CourseCategory from '../components/CourseCategory'
-import PopularCoursesCarousel from '../Features/PopularCoursesCarousel'
 
-const coursesData = [
+
+export const coursesData = [
   {
     "id": 1,
     "title": "Introduction to Python Programming",
@@ -199,7 +195,7 @@ const coursesData = [
     "price": 129.99,
     "language": "English",
     "published": true,
-    "image": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?q=80&w=996&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    "image": "https://images.unsplash.com/photo-1676299081327-6973e75d25db?w=800&q=80"
   },
   {
     "id": 15,
@@ -286,19 +282,3 @@ const coursesData = [
     "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80"
   }
 ]
-
-const HomePage = () => {
-  const popularCoursesData = coursesData.filter((course)=> course.students > 18000);
-  const beginnerCoursesData = coursesData.filter((course)=> course.level === "Beginner");
-
-  return (
-    <section className='home-page-container'>
-      <CoursesCarousel />
-      <CourseCategory />
-      <PopularCoursesCarousel coursesData={popularCoursesData} CarouselTitle="Popular Courses" /> 
-      <PopularCoursesCarousel coursesData={beginnerCoursesData} CarouselTitle="Beginner Courses" /> 
-    </section>
-  )
-}
-
-export default HomePage
