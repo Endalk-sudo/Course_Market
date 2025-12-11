@@ -1,0 +1,207 @@
+.shop-page-container {
+    padding-top: 56px;
+    margin: 0 auto;
+    max-width: 1440px;
+    min-height: 100vh;
+    background-color: var(--color-background);
+    display: flex;
+}
+
+.shop-page-container .sp-filter-section {
+    min-width: 280px;
+    /* width: 320px; */
+    height: 100%;
+    padding: 40px;
+    background-color: var(--color-background);
+    position: fixed;
+    left: -100%;
+    z-index: 99;
+    transition: all 0.3s ease;
+    box-shadow: 12px 0px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* sidebar filter toggler */
+.sp-filter-section.filter-open {
+    left: 0;
+}
+
+.sp-filter-section .fs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fs-header .filter-close-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2.8rem;
+    border: none;
+    background-color: var(--color-background);
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fs-header .filter-close-button:hover {
+    border: 1px solid black;
+}
+
+.sp-filter-section h2 {
+    font-size: 2.3rem;
+    font-family: var(--secondery-font-family);
+}
+
+.sp-filter-section hr {
+    border: 2px solid rgba(167, 167, 167, 0.623);
+    margin: 10px 0;
+}
+
+.sp-filter-section .filter-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sp-filter-section .category-lable {
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.category-checkbox {
+    display: none;
+}
+
+.filter-menu {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.filter-container input[type='checkbox']:checked ~ .filter-menu {
+    display: none;
+}
+
+.filter-menu > li {
+    margin: 15px 0;
+}
+
+.filter-menu > li input {
+    transform: scale(1.7);
+    margin: 7px;
+    margin-right: 1rem;
+}
+
+.filter-menu > li > label {
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.filter-container .max-price {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.sp-main-container {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sp-main-container .sort-container {
+    padding: 20px;
+    position: sticky;
+    top: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-background);
+    border-radius: 8px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.sort-container .mobile-filter-button {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: transparent;
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.2);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.sort-container .mobile-filter-button:hover {
+    border: 1px solid black;
+}
+
+.sort-container label {
+    font-size: 1.3rem;
+    font-weight: 450;
+}
+
+.sort-container select {
+    margin-left: 0.5rem;
+    padding: 10px;
+    font-size: 1.3rem;
+    border-radius: 8px;
+    border: 3px solid rgba(167, 167, 167, 0.747);
+    cursor: pointer;
+}
+
+.shop-page-container .sp-main-content {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 660px) {
+    .shop-page-container .sp-main-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-container {
+        position: static;
+    }
+
+    .sp-main-container .sort-container {
+        top: 80px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .sp-main-container .sort-container {
+        top: 90px;
+    }
+
+    .shop-page-container .sp-filter-section {
+        background-color: var(--color-background);
+        position: sticky;
+        top: 50px;
+        box-shadow: none;
+    }
+
+    .sp-main-container .sort-container {
+        /* position: static; */
+        justify-content: end;
+    }
+
+    .sort-container .mobile-filter-button {
+        display: none;
+    }
+
+    .fs-header .filter-close-button {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .shop-page-container .sp-main-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

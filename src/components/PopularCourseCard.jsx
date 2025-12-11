@@ -3,7 +3,7 @@ import "./PopularCourseCard.css"
 
 const PcCourseCard = ({title,instructor,rating,price,imgUrl}) => {
   return (
-    <div className='course-card'>
+    <div className='p-course-card'>
         <div className='course-card-img-layer'>
             <img className='course-card-img' src={imgUrl} alt="" />
         </div>

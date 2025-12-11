@@ -24,7 +24,7 @@ const courses = [
     img
   },
   {
-    id: 3,
+    id: 4,
     title: "UI/UX Design Pro",
     subtitle: "Figma & Design Systems",
     img
