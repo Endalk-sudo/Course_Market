@@ -1,0 +1,94 @@
+.cart-page {
+    padding: 100px 40px 40px 40px;
+    margin: 0 auto;
+    max-width: 1440px;
+    min-height: 100vh;
+    background-color: var(--color-background);
+}
+
+.cart-page h1 {
+    margin-bottom: 1.5rem;
+}
+
+.cart-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        's'
+        'c';
+    gap: 30px;
+}
+
+.course-list-container {
+    grid-area: c;
+}
+
+.total-price-container {
+    grid-area: s;
+}
+
+.order-summery-card {
+    border-radius: 8px;
+    padding: 20px;
+    border: 3px solid rgba(128, 128, 128, 0.241);
+    min-width: 220px;
+}
+
+.order-summery-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.order-summery-card .price-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.order-summery-card .price-item p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+.order-summery-card hr {
+    margin: 1rem 0;
+}
+
+.order-summery-card .price-item .total-price-value,
+.order-summery-card .price-item .total-price-label {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: var(--color-text-primary);
+}
+
+.order-summery-card .checkout-btn {
+    margin-top: 1rem;
+    cursor: pointer;
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: var(--color-primary-700);
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.order-summery-card .checkout-btn:hover {
+    transform: translateY(-3px);
+    background-color: var(--color-primary-600);
+}
+
+.order-summery-card .checkout-btn:active {
+    transform: translateY(0);
+}
+
+@media (min-width: 750px) {
+    .cart-container {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 'c s';
+    }
+}
