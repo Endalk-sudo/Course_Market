@@ -1,0 +1,29 @@
+.cd-contents {
+    width: 100%;
+    margin-top: 1.2rem;
+}
+
+.cd-contents .cd-content-links {
+    display: flex;
+    align-items: end;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid rgba(167, 167, 167, 0.645);
+}
+
+.cd-contents .cd-content-links > a {
+    padding: 7px 20px;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.cd-contents .cd-content-links > a:hover {
+    font-weight: bolder;
+    border-bottom: 3px solid var(--color-text-primary);
+}
+
+.cd-contents .cd-content-links > a.active {
+    font-weight: bolder;
+    border-bottom: 3px solid var(--color-text-primary);
+}

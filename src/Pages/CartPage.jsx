@@ -1,8 +1,11 @@
 import React from 'react'
+import "./CartPage.css"
 
 const CartPage = () => {
   return (
-    <div>CartPage</div>
+    <section className='cart-page'>
+      <h1>Shopping Cart</h1>
+    </section>
   )
 }
 

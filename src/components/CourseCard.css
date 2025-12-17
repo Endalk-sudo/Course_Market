@@ -87,3 +87,8 @@
 .course-content-container .course-card-btn:active {
     transform: translateY(0);
 }
+
+.course-card-Link {
+    color: inherit;
+    text-decoration: none;
+}

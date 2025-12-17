@@ -6,6 +6,7 @@ import { FiX } from 'react-icons/fi';
 
 import "./ShopPage.css";
 import { BiCategory } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 const ShopPage = () => {
 
@@ -42,7 +43,7 @@ const ShopPage = () => {
 
     result = result.filter((course) => course.price < maxPrice)
 
-    if (selectedCategory === "popularity") result.sort((a, b) => a.students - b.students)
+    if (selectedCategory === "popularity") result.sort((a, b) => b.studentsEnrolled - a.studentsEnrolled)
     if (selectedCategory === "rating") result.sort((a, b) => b.rating - a.rating)
     if (selectedCategory === "lowest-price") result.sort((a, b) => a.price - b.price)
     if (selectedCategory === "highest-price") result.sort((a, b) => b.price - a.price)

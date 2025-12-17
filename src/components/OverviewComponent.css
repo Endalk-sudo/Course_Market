@@ -1,0 +1,25 @@
+.cd-content {
+    margin-top: 1rem;
+    font-family: var(--secondery-font-family);
+}
+
+.cd-content .cd-heading-two {
+    margin: 0.9rem 0 0.3rem 0;
+    font-family: var(--primary-font-family);
+}
+
+.cd-content .cd-description {
+    font-size: 1.3rem;
+    word-spacing: 0.8px;
+    line-height: 1.7rem;
+    /* color: var(--color-text-secondary); */
+}
+
+.cd-content ul li {
+    list-style-position: inside;
+    font-size: 1.2rem;
+}
+
+.cd-content ul li::marker {
+    content: '✔️';
+}

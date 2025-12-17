@@ -1,0 +1,64 @@
+.cd-content {
+    margin-top: 1rem;
+    font-family: var(--secondery-font-family);
+}
+
+.cd-content .cd-heading-two {
+    margin: 0.9rem 0 0.3rem 0;
+    font-family: var(--primary-font-family);
+}
+
+.cd-content .cd-description {
+    font-size: 1.3rem;
+    word-spacing: 0.8px;
+    line-height: 1.7rem;
+}
+
+.cd-content ul li {
+    list-style-position: inside;
+    font-size: 1.2rem;
+}
+
+.cd-content ul li::marker {
+    content: '✔️';
+}
+
+.instructor-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.instructor-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.instructor-stats {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary-600);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}

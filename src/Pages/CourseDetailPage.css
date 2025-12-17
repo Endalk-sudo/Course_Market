@@ -1,0 +1,111 @@
+.course-detail-page {
+    padding: 100px 40px 40px 40px;
+    margin: 0 auto;
+    max-width: 1440px;
+    min-height: 100vh;
+    background-color: var(--color-background);
+}
+
+.course-detail-page .cd-title-container h1 {
+    font-family: var(--secondery-font-family);
+    margin-bottom: 7px;
+}
+
+.course-detail-page .cd-title-container > p {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-text-secondary);
+}
+
+.course-detail-page .cd-content-container {
+    margin-top: 1.3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.cd-content-container .cd-img-layer {
+    width: 100%;
+    height: clamp(300px, 45vw, 550px);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 0px 18px rgb(0, 0, 0, 0.3);
+}
+
+.cd-content-container .cd-img-layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out;
+}
+
+.cd-content-container .cd-img-layer img:hover {
+    transform: scale(1.07);
+}
+
+.cd-card {
+    padding: 20px;
+    /* border: 2px solid black; */
+    border-radius: 8px;
+    width: clamp(300px, 30%, 500px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.2), 0px 12px 12px rgb(0, 0, 0, 0.2);
+}
+
+.cd-card .cd-card-btn {
+    cursor: pointer;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background-color: var(--color-primary-600);
+    color: var(--color-text-inverse);
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.2), 0px 12px 12px rgb(0, 0, 0, 0.2);
+    margin-bottom: 0.3rem;
+    transition: all 0.3s ease-in;
+}
+
+.cd-card .cd-card-btn:hover {
+    transform: translateY(-3px);
+}
+
+.cd-card .cd-card-btn:active {
+    transform: translateY(0);
+}
+
+.cd-card .cd-card-btn.cd-card-btn-2 {
+    background-color: var(--color-background);
+    color: var(--color-primary-600);
+    border: 3px solid var(--color-primary-600);
+}
+
+.cd-card .cd-card-content {
+    margin-top: 0.6rem;
+    border-top: 2px solid var(--color-text-secondary);
+}
+
+.cd-card .cd-card-content ul {
+    padding-top: 0.6rem;
+    list-style-position: inside;
+}
+
+.cd-card .cd-card-content ul li {
+    font-size: 1.3rem;
+    color: var(--color-text-secondary);
+}
+
+.cd-card .cd-card-content ul li::marker {
+    content: '⌛';
+}
+
+@media (min-width: 950px) {
+    .course-detail-page .cd-content-container {
+        grid-template-columns: 1.8fr 1fr;
+    }
+}

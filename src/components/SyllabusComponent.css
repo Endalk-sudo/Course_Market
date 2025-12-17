@@ -1,0 +1,8 @@
+.cd-content .cd-heading-three {
+    margin: 12px 0 5px 0;
+    font-size: 1.7rem;
+}
+.cd-duration {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+}
