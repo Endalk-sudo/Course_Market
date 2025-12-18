@@ -14,6 +14,7 @@
 }
 
 .course-cart-card .cart-card-content {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -32,6 +33,12 @@
 .cart-card-content .c-b-container {
     display: flex;
     justify-content: space-between;
+}
+
+.course-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .c-b-container > p {

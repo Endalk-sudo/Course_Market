@@ -3,12 +3,11 @@ import CourseCard from '../components/CourseCard';
 import data from "../data.js"
 import { FaFilter } from 'react-icons/fa';
 import { FiX } from 'react-icons/fi';
-
 import "./ShopPage.css";
-import { BiCategory } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
 
-const ShopPage = () => {
+const ShopPage = ({ handleAddToCart }) => {
+
+  // console.log(handleAddToCart)
 
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [courseData] = useState(data)
@@ -52,10 +51,6 @@ const ShopPage = () => {
 
     return result
   }, [courseData, selectedCategory, filter, maxPrice, priceLevel])
-
-
-
-
 
   function handleFilterOpen() {
     setIsFilterOpen((p) => !p)
@@ -173,6 +168,7 @@ const ShopPage = () => {
                 instructor={course.instructor}
                 rating={course.rating}
                 price={course.price}
+                handleAddToCart={handleAddToCart}
               />
             ))
           ) :

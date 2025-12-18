@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import "./Navbar.css"
 import { NavLink, Link } from 'react-router-dom'
-import { FaShoppingCart, FaSearch, FaUserCircle, FaCode } from 'react-icons/fa';
+import { FaSearch, FaUserCircle, FaCode } from 'react-icons/fa';
 import { FiMenu } from 'react-icons/fi';
 import { FiX } from 'react-icons/fi';
+import CartIcon from './CartIcon';
 
 
-const Navbar = () => {
+const Navbar = ({ cartList }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
@@ -33,11 +34,9 @@ const Navbar = () => {
                     />
                 </div>
                 <div className='profile-container'>
-                    <Link className="cart-icon" to="/cart">
-                        <FaShoppingCart size={30} title="Cart" />
-                    </Link>
+                    <CartIcon cartList={cartList} />
 
-                    <Link to="">
+                    <Link to="/">
                         <FaUserCircle size={30} title="Profile" />
                     </Link>
 

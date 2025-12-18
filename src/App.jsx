@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HomePage from './Pages/HomePage'
 import ShopPage from './Pages/ShopPage'
@@ -12,12 +12,49 @@ import InstructorComponent from './components/InstructorComponent'
 
 
 const App = () => {
+
+  const [cartList, setCartList] = useState(() => {
+
+    const storedcartList = localStorage.getItem('cartItems');
+
+    if (storedcartList) {
+      return JSON.parse(storedcartList)
+    } else {
+      return []
+    }
+
+  });
+
+  useEffect(() => {
+
+    const strCartList = JSON.stringify(cartList)
+
+    localStorage.setItem("cartItems", strCartList)
+
+  }, [cartList])
+
+
+  function handleAddToCart(id) {
+    if (cartList.includes(id)) {
+      alert("Course is already added :)")
+      return
+    }
+    setCartList((p) => [...p, id])
+  }
+
+  function handleRemove(id) {
+    setCartList((p) => (
+      p.filter((cId) => cId !== id)
+    ))
+  }
+
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<AppLayout />}>
+        <Route path='/' element={<AppLayout cartList={cartList} />}>
           <Route index element={<HomePage />} />
-          <Route path="/shop" element={<ShopPage />} />
+          <Route path="/shop" element={<ShopPage handleAddToCart={handleAddToCart} />} />
 
           <Route path="/course-detail/:id" element={<CourseDetailPage />} >
             <Route element={<CourseDetailContentLayout />}>
@@ -27,7 +64,7 @@ const App = () => {
             </Route>
           </Route>
 
-          <Route path="/cart" element={<CartPage />} />
+          <Route path="/cart" element={<CartPage cartList={cartList} handleRemove={handleRemove} />} />
         </Route>
       </Routes>
     </BrowserRouter>

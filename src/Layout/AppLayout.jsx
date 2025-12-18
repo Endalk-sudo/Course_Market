@@ -1,15 +1,15 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import {Outlet} from "react-router-dom"
+import { Outlet } from "react-router-dom"
 
-const AppLayout = () => {
+const AppLayout = ({ cartList }) => {
   return (
     <section className='app-container'>
-        <Navbar />
+      <Navbar cartList={cartList} />
 
-        <section className='app-content'>
-            <Outlet />
-        </section>
+      <section className='app-content'>
+        <Outlet />
+      </section>
     </section>
   )
 }

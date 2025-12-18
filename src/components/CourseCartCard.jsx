@@ -1,18 +1,18 @@
 import React from 'react'
 import "./CourseCartCard.css"
 
-const CourseCartCard = () => {
+const CourseCartCard = ({ id, price, name, title, handleRemove, img }) => {
     return (
-        <div className='course-cart-card'>
-            <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80" />
+        <div className='course-cart-card' >
+            <img src={img} />
             <div className="cart-card-content">
                 <div className='cart-card-header'>
-                    <h2>The Complete React & Redux Mastery Course (2025)</h2>
-                    <p>Alice Johnson</p>
+                    <h2>{title}</h2>
+                    <p>{name}</p>
                 </div>
                 <div className='c-b-container'>
-                    <p>$199.99</p>
-                    <button className='remove-btn'>Remove</button>
+                    <p>${price}</p>
+                    <button className='remove-btn' onClick={() => handleRemove(id)}>Remove</button>
                 </div>
             </div>
         </div>
