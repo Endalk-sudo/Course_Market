@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import "./CourseCard.css"
+import Rating from '../components/Rating';
 
 const CourseCard = ({ id, title, img, instructor, rating, price, handleAddToCart }) => {
 
@@ -14,7 +15,10 @@ const CourseCard = ({ id, title, img, instructor, rating, price, handleAddToCart
         <div className="course-content">
           <h3 className='course-title'>{title}</h3>
           <p className='course-instructor'>{instructor.name}</p>
-          <p className='course-rating'>{rating}/<span>5</span></p>
+          <span>
+            <Rating rating={rating} size={18} />
+            {` (${rating})`}
+          </span>
           <p className='course-price'>${price}</p>
         </div>
         <button className='course-card-btn' onClick={() => handleAddToCart(id)}>Add to Cart</button>
