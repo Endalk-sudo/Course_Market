@@ -15,7 +15,7 @@ const HomePage = () => {
       <CoursesCarousel />
       <CourseCategory />
       <PopularCoursesCarousel coursesData={popularCoursesData} CarouselTitle="Popular Courses" />
-      <PopularCoursesCarousel coursesData={beginnerCoursesData} CarouselTitle="Intermediate Level Courses" />
+      <PopularCoursesCarousel coursesData={beginnerCoursesData} CarouselTitle="Intermediate Courses" />
     </section>
   )
 }
