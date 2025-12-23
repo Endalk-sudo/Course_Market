@@ -6,10 +6,10 @@ import "./CoursesCarousel.css"
 
 const courses = [
   {
-    id : 1,
+    id: 1,
     title: " React Mastery 2025",
     subtitle: "Build Real-World Apps",
-    img 
+    img
   },
   {
     id: 2,
@@ -33,37 +33,37 @@ const courses = [
 ]
 
 const CoursesCarousel = () => {
-  const [currentIndex , setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const totalSlides = courses.length;
-  
+
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const timeoutref = useRef(null);
 
-  const nextSlide = () =>{
-    setCurrentIndex((prev)=> (prev + 1) % totalSlides)
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % totalSlides)
   }
 
-  const prevSlide = () =>{
-    setCurrentIndex((prev)=> (prev - 1 + totalSlides) % totalSlides)
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides)
   }
 
-  const goToSlide = (index) =>{
+  const goToSlide = (index) => {
     setCurrentIndex(index)
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     if (!isAutoPlaying) return;
 
-    timeoutref.current = setTimeout(()=>{
+    timeoutref.current = setTimeout(() => {
       nextSlide();
-    },4000)
+    }, 4000)
 
     return () => clearTimeout(timeoutref.current);
 
-  },[currentIndex,isAutoPlaying])
+  }, [currentIndex, isAutoPlaying])
 
-  
+
 
   // Touch/Swipe support
   const touchStartX = useRef(0);
@@ -101,15 +101,15 @@ const CoursesCarousel = () => {
     >
       <button className='carousel-btn left-carousel-btn' onClick={prevSlide}>←</button>
 
-      <div 
+      <div
         className='courses-carousel'
-        style={{transform: `translateX(-${currentIndex * 100}%)`,transition: "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)"}}
-        
+        style={{ transform: `translateX(-${currentIndex * 100}%)`, transition: "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)" }}
+
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        
-        >
+
+      >
 
         {courses.map((course) => (<CarouselCard
           key={course.id}
@@ -123,7 +123,7 @@ const CoursesCarousel = () => {
       <div className='dot-btn-container'>
         {
           courses.map((_, idx) => (
-            <button key={idx} className={`dot-btn ${currentIndex === idx ? "dot-active" : ""}`} onClick={()=>goToSlide(idx)}></button>
+            <button key={idx} className={`dot-btn ${currentIndex === idx ? "dot-active" : ""}`} onClick={() => goToSlide(idx)}></button>
           ))
         }
       </div>

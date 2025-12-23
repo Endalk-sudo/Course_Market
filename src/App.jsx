@@ -9,9 +9,13 @@ import CourseDetailContentLayout from './Layout/CourseDetailContentLayout'
 import OverviewComponent from './components/OverviewComponent'
 import SyllabusComponent from './components/SyllabusComponent'
 import InstructorComponent from './components/InstructorComponent'
+import { useToast } from './context/ToastContext'
+import ToastNotification from './components/ToastNotification'
 
 
 const App = () => {
+
+  const { addToast } = useToast()
 
   const [cartList, setCartList] = useState(() => {
 
@@ -36,9 +40,10 @@ const App = () => {
 
   function handleAddToCart(id) {
     if (cartList.includes(id)) {
-      alert("Course is already added :)")
+      addToast("Course alreay added", "error")
       return
     }
+    addToast("Course added to cart", "success")
     setCartList((p) => [...p, id])
   }
 
@@ -67,6 +72,7 @@ const App = () => {
           <Route path="/cart" element={<CartPage cartList={cartList} handleRemove={handleRemove} />} />
         </Route>
       </Routes>
+      <ToastNotification />
     </BrowserRouter>
   )
 }
